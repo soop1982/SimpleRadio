@@ -1,0 +1,113 @@
+package pl.prosteradio;
+
+import android.content.Context;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import javax.net.ssl.SSLException;
+
+/** Proste pobieranie danych przez HTTP(S) z obsługą przekierowań. */
+public final class Http {
+    public static final String USER_AGENT = "SimpleRadio/1.3.3 (Android)";
+
+    private Http() {}
+
+    public static byte[] get(Context ctx, String url, int maxBytes) throws IOException {
+        Tls.init(ctx.getApplicationContext());
+        try {
+            return getFollow(url, maxBytes);
+        } catch (RuntimeException e) {
+            throw new IOException(e.toString());
+        } catch (SSLException e) {
+            // Jeśli TLS zawiódł mimo poprawek, spróbuj tego samego adresu przez zwykłe HTTP.
+            if (url.startsWith("https://")) {
+                return getFollow("http://" + url.substring(8), maxBytes);
+            }
+            throw e;
+        }
+    }
+
+    private static byte[] getFollow(String url, int maxBytes) throws IOException {
+        for (int hop = 0; hop < 6; hop++) {
+            HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
+            c.setConnectTimeout(10000);
+            c.setReadTimeout(15000);
+            c.setInstanceFollowRedirects(false);
+            c.setRequestProperty("User-Agent", USER_AGENT);
+            c.setRequestProperty("Accept-Encoding", "identity");
+            try {
+                int code = c.getResponseCode();
+                if (code >= 300 && code < 400) {
+                    String loc = c.getHeaderField("Location");
+                    if (loc == null) throw new IOException("Przekierowanie bez adresu");
+                    url = new URL(new URL(url), loc).toString();
+                    continue;
+                }
+                if (code != 200) throw new IOException("HTTP " + code);
+                InputStream in = c.getInputStream();
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                byte[] buf = new byte[8192];
+                int n, total = 0;
+                while ((n = in.read(buf)) > 0) {
+                    total += n;
+                    if (total > maxBytes) throw new IOException("Za duży plik");
+                    bos.write(buf, 0, n);
+                }
+                in.close();
+                return bos.toByteArray();
+            } finally {
+                c.disconnect();
+            }
+        }
+        throw new IOException("Za dużo przekierowań");
+    }
+
+    /**
+     * Otwiera połączenie (z przekierowaniami, także http→https) i zwraca je gotowe do czytania.
+     * Kompresję gzip obsługuje Android sam. Wywołujący musi zrobić disconnect().
+     */
+    public static HttpURLConnection open(Context ctx, String url) throws IOException {
+        Tls.init(ctx.getApplicationContext());
+        for (int hop = 0; hop < 8; hop++) {
+            HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
+            c.setConnectTimeout(10000);
+            c.setReadTimeout(20000);
+            c.setInstanceFollowRedirects(false);
+            c.setRequestProperty("User-Agent", USER_AGENT);
+            int code;
+            try {
+                code = c.getResponseCode();
+            } catch (IOException e) {
+                c.disconnect();
+                throw e;
+            } catch (RuntimeException e) {
+                c.disconnect();
+                throw new IOException(e.toString());
+            }
+            if (code >= 300 && code < 400) {
+                String loc = c.getHeaderField("Location");
+                c.disconnect();
+                if (loc == null) throw new IOException("Redirect without location");
+                url = new URL(new URL(url), loc).toString();
+                continue;
+            }
+            if (code != 200) {
+                c.disconnect();
+                throw new IOException("HTTP " + code);
+            }
+            return c;
+        }
+        throw new IOException("Too many redirects");
+    }
+
+    /** Wysyła zapytanie i ignoruje wynik (np. licznik kliknięć). */
+    public static void ping(final Context ctx, final String url) {
+        new Thread(() -> {
+            try { get(ctx, url, 64 * 1024); } catch (Exception ignored) {}
+        }, "ping").start();
+    }
+}
