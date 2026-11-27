@@ -1,4 +1,4 @@
-name: Simple Radio – zbuduj APK
+name: Retro Radio – zbuduj APK
 
 on:
   push:
@@ -23,5 +23,5 @@ jobs:
 
       - uses: actions/upload-artifact@v5
         with:
-          name: SimpleRadio-apk
+          name: RetroRadio-apk
           path: RetroAndroidRadio.apk
