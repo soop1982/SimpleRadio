@@ -72,7 +72,7 @@
     <string name="version_label">Sürüm %1$s</string>
     <string name="about_sources">İstasyon dizini: radio-browser.info\nPodcast\'ler: Apple Podcasts dizini ve yapımcıların RSS akışları</string>
     <string name="support">Bana kahve ısmarla</string>
-    <string name="support_desc">Simple Radio\'nun geliştirilmesini destekleyin</string>
+    <string name="support_desc">Retro Radio\'nun geliştirilmesini destekleyin</string>
     <string name="check_updates">Güncellemeleri denetle</string>
     <string name="contact">İletişim</string>
 </resources>

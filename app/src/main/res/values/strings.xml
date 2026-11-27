@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Simple Radio</string>
+    <string name="app_name" translatable="false">Retro Radio</string>
     <string name="search_hint">Search stations by name…</string>
     <string name="tab_popular">Popular</string>
     <string name="tab_favorites">Favorites</string>
@@ -73,7 +73,7 @@
     <string name="version_label">Version %1$s</string>
     <string name="about_sources">Station directory: radio-browser.info\nPodcasts: Apple Podcasts directory and the creators\' own RSS feeds</string>
     <string name="support">Buy me a coffee</string>
-    <string name="support_desc">Support the development of Simple Radio</string>
+    <string name="support_desc">Support the development of Retro Radio</string>
     <string name="check_updates">Check for updates</string>
     <string name="contact">Contact</string>
     <string name="website" translatable="false">retroandroidradio.com</string>

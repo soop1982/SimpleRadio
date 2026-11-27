@@ -72,7 +72,7 @@
     <string name="version_label">Versi %1$s</string>
     <string name="about_sources">Direktori stasiun: radio-browser.info\nPodcast: direktori Apple Podcasts dan feed RSS para kreator</string>
     <string name="support">Traktir kopi</string>
-    <string name="support_desc">Dukung pengembangan Simple Radio</string>
+    <string name="support_desc">Dukung pengembangan Retro Radio</string>
     <string name="check_updates">Periksa pembaruan</string>
     <string name="contact">Kontak</string>
 </resources>

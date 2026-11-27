@@ -72,7 +72,7 @@
     <string name="version_label">संस्करण %1$s</string>
     <string name="about_sources">स्टेशन निर्देशिका: radio-browser.info\nपॉडकास्ट: Apple Podcasts निर्देशिका और रचनाकारों के RSS फ़ीड</string>
     <string name="support">एक कॉफ़ी पिलाएँ</string>
-    <string name="support_desc">Simple Radio के विकास में सहयोग करें</string>
+    <string name="support_desc">Retro Radio के विकास में सहयोग करें</string>
     <string name="check_updates">अपडेट देखें</string>
     <string name="contact">संपर्क</string>
 </resources>

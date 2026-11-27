@@ -72,7 +72,7 @@
     <string name="version_label">Version %1$s</string>
     <string name="about_sources">Annuaire des stations : radio-browser.info\nPodcasts : annuaire Apple Podcasts et flux RSS des créateurs</string>
     <string name="support">Offrez-moi un café</string>
-    <string name="support_desc">Soutenez le développement de Simple Radio</string>
+    <string name="support_desc">Soutenez le développement de Retro Radio</string>
     <string name="check_updates">Rechercher des mises à jour</string>
     <string name="contact">Contact</string>
 </resources>

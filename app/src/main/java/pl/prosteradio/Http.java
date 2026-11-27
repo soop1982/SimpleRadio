@@ -12,7 +12,7 @@ import javax.net.ssl.SSLException;
 
 /** Proste pobieranie danych przez HTTP(S) z obsługą przekierowań. */
 public final class Http {
-    public static final String USER_AGENT = "SimpleRadio/1.3.3 (Android)";
+    public static final String USER_AGENT = "RetroRadio/1.3.3 (Android)";
 
     private Http() {}
 

@@ -72,7 +72,7 @@
     <string name="version_label">버전 %1$s</string>
     <string name="about_sources">방송국 목록: radio-browser.info\n팟캐스트: Apple 팟캐스트 디렉터리와 제작자의 RSS 피드</string>
     <string name="support">커피 한 잔 후원</string>
-    <string name="support_desc">Simple Radio 개발 후원하기</string>
+    <string name="support_desc">Retro Radio 개발 후원하기</string>
     <string name="check_updates">업데이트 확인</string>
     <string name="contact">문의</string>
 </resources>

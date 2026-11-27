@@ -146,12 +146,12 @@ public class RadioService extends Service implements StreamSource.TitleListener 
         audio = (AudioManager) getSystemService(AUDIO_SERVICE);
         WifiManager wm = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
         if (wm != null) {
-            wifiLock = wm.createWifiLock(WifiManager.WIFI_MODE_FULL, "SimpleRadio");
+            wifiLock = wm.createWifiLock(WifiManager.WIFI_MODE_FULL, "RetroRadio");
             wifiLock.setReferenceCounted(false);
         }
         PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
         if (pm != null) {
-            wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "SimpleRadio:play");
+            wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "RetroRadio:play");
             wakeLock.setReferenceCounted(false);
         }
         proxy = new IcyProxy(this);

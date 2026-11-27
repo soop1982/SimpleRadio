@@ -72,7 +72,7 @@
     <string name="version_label">الإصدار %1$s</string>
     <string name="about_sources">دليل المحطات: radio-browser.info\nالبودكاست: دليل Apple Podcasts وخلاصات RSS الخاصة بصانعيها</string>
     <string name="support">ادعمنا بفنجان قهوة</string>
-    <string name="support_desc">ادعم تطوير Simple Radio</string>
+    <string name="support_desc">ادعم تطوير Retro Radio</string>
     <string name="check_updates">التحقق من التحديثات</string>
     <string name="contact">اتصل بنا</string>
 </resources>

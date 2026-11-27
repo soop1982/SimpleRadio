@@ -1,4 +1,4 @@
-# Simple Radio
+# Retro Radio
 
 Prosta aplikacja do słuchania radia internetowego, bez reklam, działająca na **Androidzie 4.4 (KitKat)** i nowszych.
 
@@ -33,7 +33,7 @@ Potrzebny jest komputer – sam tablet nie zbuduje aplikacji. Do wyboru dwie dro
 
 1. Załóż darmowe konto na https://github.com i utwórz nowe repozytorium.
 2. Wgraj do niego zawartość tego ZIP-a (przycisk „uploading an existing file”; ważne, żeby trafił też ukryty folder `.github`).
-3. Otwórz zakładkę **Actions** – budowanie ruszy samo. Po ok. 5 minutach w sekcji **Artifacts** pojawi się `SimpleRadio-apk` (w środku `RetroAndroidRadio.apk`) do pobrania.
+3. Otwórz zakładkę **Actions** – budowanie ruszy samo. Po ok. 5 minutach w sekcji **Artifacts** pojawi się `RetroRadio-apk` (w środku `RetroAndroidRadio.apk`) do pobrania.
 
 ## Instalacja na tablecie
 

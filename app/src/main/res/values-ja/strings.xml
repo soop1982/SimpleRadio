@@ -72,7 +72,7 @@
     <string name="version_label">バージョン %1$s</string>
     <string name="about_sources">局のディレクトリ: radio-browser.info\nポッドキャスト: Apple Podcasts のディレクトリと制作者の RSS フィード</string>
     <string name="support">コーヒーをおごる</string>
-    <string name="support_desc">Simple Radio の開発を応援する</string>
+    <string name="support_desc">Retro Radio の開発を応援する</string>
     <string name="check_updates">アップデートを確認</string>
     <string name="contact">お問い合わせ</string>
 </resources>

@@ -42,7 +42,7 @@ public final class CrashLog {
 
     /** Zapisuje zdarzenie do dziennika (i do logcat). */
     public static void event(String msg) {
-        Log.i("SimpleRadio", msg);
+        Log.i("RetroRadio", msg);
         synchronized (events) {
             events.add(TIME.format(new Date()) + "  " + msg);
             while (events.size() > MAX_EVENTS) events.removeFirst();
@@ -53,7 +53,7 @@ public final class CrashLog {
         if (dir == null) return;
         StringWriter sw = new StringWriter();
         PrintWriter pw = new PrintWriter(sw);
-        pw.println("Simple Radio v." + BuildInfo.versionName);
+        pw.println("Retro Radio v." + BuildInfo.versionName);
         pw.println("Android " + Build.VERSION.RELEASE + " (API " + Build.VERSION.SDK_INT + "), "
                 + Build.MANUFACTURER + " " + Build.MODEL);
         pw.println("Time: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US).format(new Date()));

@@ -949,13 +949,13 @@ public class MainActivity extends Activity implements RadioService.Listener {
                 .setView(box)
                 .setPositiveButton(R.string.copy, (d, w) -> {
                     ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-                    if (cm != null) cm.setPrimaryClip(ClipData.newPlainText("Simple Radio", report));
+                    if (cm != null) cm.setPrimaryClip(ClipData.newPlainText("Retro Radio", report));
                     Toast.makeText(this, R.string.copied, Toast.LENGTH_SHORT).show();
                 })
                 .setNeutralButton(R.string.share, (d, w) -> {
                     Intent send = new Intent(Intent.ACTION_SEND);
                     send.setType("text/plain");
-                    send.putExtra(Intent.EXTRA_SUBJECT, "Simple Radio – crash report");
+                    send.putExtra(Intent.EXTRA_SUBJECT, "Retro Radio – crash report");
                     send.putExtra(Intent.EXTRA_TEXT, report);
                     try {
                         startActivity(Intent.createChooser(send, getString(R.string.share)));

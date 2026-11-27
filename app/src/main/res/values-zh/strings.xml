@@ -72,7 +72,7 @@
     <string name="version_label">版本 %1$s</string>
     <string name="about_sources">电台目录：radio-browser.info\n播客：Apple 播客目录及创作者的 RSS 订阅源</string>
     <string name="support">请我喝咖啡</string>
-    <string name="support_desc">支持 Simple Radio 的开发</string>
+    <string name="support_desc">支持 Retro Radio 的开发</string>
     <string name="check_updates">检查更新</string>
     <string name="contact">联系我们</string>
 </resources>
